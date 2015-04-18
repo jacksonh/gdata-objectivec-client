@@ -194,7 +194,7 @@
 //
 // Reference: http://www.ietf.org/rfc/rfc3986.txt
 
-static const CFStringRef kCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
+static const CFStringRef kGDataCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
 
 + (NSString *)stringByURLEncodingForURI:(NSString *)str {
 
@@ -207,7 +207,7 @@ static const CFStringRef kCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
   escapedStr = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                                                        originalString,
                                                        leaveUnescaped,
-                                                       kCharsToForceEscape,
+                                                       kGDataCharsToForceEscape,
                                                        kCFStringEncodingUTF8);
   if (escapedStr) {
     resultStr = [(id)CFMakeCollectable(escapedStr) autorelease];
@@ -229,7 +229,7 @@ static const CFStringRef kCharsToForceEscape = CFSTR("!*'();:@&=+$,/?%#[]");
   escapedStr = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                                                        originalString,
                                                        leaveUnescaped,
-                                                       kCharsToForceEscape,
+                                                       kGDataCharsToForceEscape,
                                                        kCFStringEncodingUTF8);
 
   if (escapedStr) {
